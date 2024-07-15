@@ -1,9 +1,10 @@
 import { Text, View } from 'react-native';
 
-export default function SignUp() {
+export default function TabsLayout() {
 	return (
 		<View>
-			<Text>Sign Up</Text>
+			<Text>Tabs Layout</Text>
 		</View>
 	);
 }
+

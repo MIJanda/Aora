@@ -1,9 +1,10 @@
 import { Text, View } from 'react-native';
 
-export default function SignUp() {
+export default function Profile() {
 	return (
 		<View>
-			<Text>Sign Up</Text>
+			<Text>Profile</Text>
 		</View>
 	);
 }
+
