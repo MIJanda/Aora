@@ -1,5 +1,6 @@
 import { Slot, Stack } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
+import { NativeWindStyleSheet } from "nativewind";
 
 export default function RootLayout() {
 	return (
@@ -9,4 +10,7 @@ export default function RootLayout() {
 	)
 }
 
+NativeWindStyleSheet.setOutput({
+	default: "native",
+});
 

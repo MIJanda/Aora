@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Profile() {
 	return (
 		<View style={styles.container}>
-			<Text>Profile Page!</Text>
+			<Text className="text-3xl text-green-500">Profile Page!</Text>
 		</View>
 	);
 }
