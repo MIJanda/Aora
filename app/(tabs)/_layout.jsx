@@ -1,10 +1,50 @@
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { Tabs, Redirect } from 'expo-router';
+import { icons } from '../../constants';
+
+const TabIcon = ({ icon, color, name, focused }) => {
+	return (
+		<View className="items-center justify-center gap-1">
+			<Image
+				source={icon}
+				resizeMode='contain'
+				tintColor={color}
+				className='h-5 w-5'
+			/>
+			<Text
+				className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`}
+			>
+				{name}
+			</Text>
+		</View>
+	)
+}
 
 export default function TabsLayout() {
 	return (
-		<View>
-			<Text>Tabs Layout</Text>
-		</View>
+		<>
+			<Tabs
+				screenOptions={{
+					tabBarShowLabel: false
+				}}
+			>
+				<Tabs.Screen
+					name='home'
+					options={{
+						title: 'Home',
+						headerShown: false,
+						tabBarIcon: ({ color, focused }) => (
+							<TabIcon
+								icon={icons.home}
+								color={color}
+								name="Home"
+								focused={focused}
+							/>
+						)
+					}}
+				/>
+			</Tabs>
+		</>
 	);
 }
 
