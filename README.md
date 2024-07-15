@@ -1,10 +1,10 @@
 <div align="center">
-  <h3 align="center">Video Sharing App</h3>
+  <h3 align="center">Aora: A.I. Video Sharing App</h3>
 </div>
 
 <p>
 Built with React Native for seamless user experiences, Animatable for captivating animations, and integrated with the dependable backend systems of Appwrite, 
-this app showcases impressive design and functionality, enabling seamless sharing of AI videos within the community.
+this app showcases impressive design and functionality, enabling seamless sharing of AI videos.
 </p>
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
