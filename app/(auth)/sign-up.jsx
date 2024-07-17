@@ -1,9 +1,10 @@
-import { Text, View, ScrollView, Image } from 'react-native';
+import { Text, View, ScrollView, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 import { images } from '../../constants';
+import { createUser } from '../../lib/appwrite';
 
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
@@ -17,8 +18,24 @@ export default function SignUp() {
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	const submit = () => {
+	const submit = async () => {
+		if (!form.username || !form.password || !form.email) {
+			Alert.alert('Error', 'Please fill in all the fields');
+		}
 
+		setIsSubmitting(true);
+
+		try {
+			const result = await createUser(form.email, form.password, form.username);
+
+			// set result to global state
+
+			router.replace('/home');
+		} catch (error) {
+			Alert.alert('Error', error.message);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
