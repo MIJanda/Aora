@@ -1,8 +1,8 @@
 import { SplashScreen, Stack } from 'expo-router';
-import { Text, View } from 'react-native';
 import { NativeWindStyleSheet } from "nativewind";
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
+import 'react-native-url-polyfill/auto';
 
 SplashScreen.preventAutoHideAsync();
 
